@@ -16,10 +16,9 @@ If the character is already in the dictionary, it means it has been encountered 
 The algorithm checks whether the stored index of the character in the dictionary (dict[letter]) is greater than or equal to the current starting position (start). 
 This is to ensure that the repeated character is part of the current substring being considered.If the condition is true, it means the repeated character is within the current substring, so the starting position is updated to dict[letter] + 1. This effectively moves the starting position to the next index after the last occurrence of the repeated character.
 
+# Solution
 
-
-
-
+```
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         start = result = 0
@@ -32,3 +31,4 @@ class Solution:
             result = max(result, i-start+1)
             index[letter] = i
         return result
+```

@@ -1,0 +1,25 @@
+def majority_element(nums):
+    candidate = None
+    count = 0
+    for i in range(len(nums)):
+        if count == 0:
+            candidate = nums[i]
+            count = 1
+        elif nums[i] == candidate:
+            count += 1
+        else:
+            count -= 1
+
+    print(candidate)
+    # Check if candidate avvaible n/2 times or not
+    breakpoint()
+    count = nums.count(candidate)
+    if len(nums)/2 <= count:
+        return candidate
+    else:
+        return -1
+
+
+input = [1, 2, 2, 2,  3, 3, 3, 2, 3, 2, 2, 2, 2, 1]
+
+print(majority_element(input))
